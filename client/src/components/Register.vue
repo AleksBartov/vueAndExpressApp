@@ -1,21 +1,18 @@
 <template>
   <div>
-    <h1>Register</h1>
+    <h1>РЕГИСТРАЦИЯ</h1>
 
-    <input 
-      type="email"
+    <input type="email"
       name="email"
       v-model="email"
       placeholder="email" />
     <br>
-    <input 
-      type="password"
+    <input type="password"
       name="password"
       v-model="password"
       placeholder="password" />
     <br>
-    <button
-          @click="register">Register</button>
+    <button @click="register">зарегистрироваться</button>
 
   </div>
 </template>
@@ -30,17 +27,16 @@ export default {
     }
   },
   methods: {
-    async register() {
+    async register () {
       const response = await AuthenticationService.register({
         email: this.email,
         password: this.password
-      });
-      console.log(response.data);
+      })
+      console.log(response.data)
     }
   }
 }
 </script>
-
 
 <style scoped>
 
